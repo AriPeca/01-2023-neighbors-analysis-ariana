@@ -23,6 +23,7 @@ The notebook [`analysis 1-Ariana.ipynb`](notebooks/analysis 1-Ariana.ipynb) perf
 
 ##### Part 1: Unique number of recipients
 
+- Load libraries and data
 - Select the column `to` and use the value_counts() function to get a list of the unique email addresses and the number of times those address receive an alert.
 - Create a new dataFrame called 'unique_count' to contain the previous list.
 - Export the new dataFrame as a csv file.
@@ -30,16 +31,27 @@ The notebook [`analysis 1-Ariana.ipynb`](notebooks/analysis 1-Ariana.ipynb) perf
 
 ##### Part 2: Tallies over time (resampling)
 
-- Description of what you did with the data
+- Load libraries and data, parsing the date column
+- Select the date columnn and convert it to utc (coordinated universal time)
+- Create a new dataFrame with this information and reset the index to be the date
+- Resample the data by month
+- Create a new dataFrame called 'brookhaven_resampling' to contain the data.
+- Export the new dataFrame as a csv file.
 
 ##### Part 3: Tallies of the body_text column values containing “package” and “car”
 
-- Description of what you did with the data
-
+- Load libraries and data
+- Create a new column 'package car', and use the lambda function to select any messages that contain 'package' or 'car' in the 'body title' column. All messages containing either of these words will appear in the new column 'package car' as a true or false statement.
+- Use the value count function on this new column to figure out how many messages contain 'package' or 'car'
+- Create a new dataFrame which includes this new column you've created
+- Export the new dataFrame as a csv file.
 
 ## Outputs
 
-The notebooks output this spreadsheet which contains TKTK: [`output/tktktk.csv`](output/tktktk.csv).
+The notebooks output this spreadsheet which contains 3 csv files:
+[`unique_count-PerezCastells.csv`](output/unique_count-PerezCastells.csv)
+[`resampling_PerezCastells.csv`](output/resampling_PerezCastells.csv)
+[`car_package_PerezCastells.csv`](output/car_package_PerezCastells.csv)
 
 ## Running the analysis yourself
 
@@ -54,4 +66,4 @@ All code in this repository is available under the [MIT License](https://opensou
 
 ## Feedback / Questions?
 
-Contact YOUR NAME HERE at your.name@email.com.
+Contact Ariana Perez-Castells at ariana.perez-castells49@journalism.cuny.edu
